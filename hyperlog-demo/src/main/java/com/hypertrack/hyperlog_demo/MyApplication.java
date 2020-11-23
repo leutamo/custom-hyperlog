@@ -33,11 +33,23 @@ import com.hypertrack.hyperlog.HyperLog;
  */
 
 public class MyApplication extends Application {
+
+    private static final String TAG = MainActivity.class.getSimpleName();
+    public static final String OLD_DB = "com.hypertrack.common.device_logs.db";
     @Override
     public void onCreate() {
         super.onCreate();
-        HyperLog.initialize(this,new CustomLogMessageFormat(this));
+        //HyperLog.initialize(this,60,new CustomLogMessageFormat(this));//60 SECONDS DELETE
+        HyperLog.initialize(this,60,new CustomLogMessageFormat(this));//seven days SECONDS DELETE
         HyperLog.setLogLevel(Log.VERBOSE);
-        HyperLog.setURL("<Set URL>");
+        if (this.deleteDatabase(OLD_DB)){
+            HyperLog.i(TAG,"****" + OLD_DB + "-Old database deleted");
+        }
+        //HyperLog.e(TAG,"*******************" + HyperLog.getDeviceLogsCount() + "INICIO");
+        //HyperLog.e(TAG,"******************* " + HyperLog.getExpiryTime() + "***** Seconds Time Expiring");
+
+        //HyperLog.deleteLogs();
+
+        //HyperLog.setURL("<Set URL>");
     }
 }

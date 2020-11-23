@@ -37,7 +37,8 @@ import java.util.List;
 class DeviceLogDatabaseHelper extends SQLiteOpenHelper implements DeviceLogDataSource {
 
     private static final String TAG = DeviceLogDatabaseHelper.class.getSimpleName();
-    private static final String DATABASE_NAME = "com.hypertrack.common.device_logs.db";
+    //private static final String DATABASE_NAME = "com.hypertrack.common.device_logs.db";
+    private static final String DATABASE_NAME = "es.erictel.mycompany.common.device_logs.db";
     private static final int DATABASE_VERSION = 2;
 
     private static DeviceLogDatabaseHelper deviceLogDatabaseHelper;

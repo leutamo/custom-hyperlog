@@ -57,9 +57,15 @@ public class MainActivity extends AppCompatActivity {
     ArrayAdapter listAdapter;
     int batchNumber = 1;
     int count = 0;
+    /*
     String[] logs = new String[]{"Download Library", "Library Downloaded", "Initialize Library", "Library Initialized", "Log Message", "Message Logged",
             "Create Log File", "Log File Created", "Push Logs to Server", "Logs Pushed to Server", "Logs Deleted", "Library Downloaded", "Library Initialized", "Message Logged",
             "Log File Created", "Logs Pushed to Server", "Logs Deleted"};
+
+     */
+    String[] logs = new String[]{"1", "2", "3", "4", "5", "6","7", "8", "9", "10", "11", "12", "13", "14",
+            "15", "16", "17","18","19","20"};
+
     Toast toast;
 
     @Override
@@ -105,6 +111,9 @@ public class MainActivity extends AppCompatActivity {
         File file = HyperLog.getDeviceLogsInFile(this, false);
         if (file != null && file.exists())
             showToast("File Created at: " + file.getAbsolutePath());
+            //Log.e(TAG, "Paso por crear archivo");
+            //file.delete();
+            //Log.e(TAG, "Archivo eliminado");
     }
 
     public void deleteLogs(View view) {

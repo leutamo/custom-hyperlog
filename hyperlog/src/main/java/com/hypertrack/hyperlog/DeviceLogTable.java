@@ -25,10 +25,12 @@ SOFTWARE.
 package com.hypertrack.hyperlog;
 
 import android.content.ContentValues;
+import android.content.Context;
 import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.hypertrack.hyperlog.utils.HLDateTimeUtility;
 
@@ -46,6 +48,7 @@ class DeviceLogTable {
     private static final int DEVICE_LOG_REQUEST_QUERY_LIMIT = 5000;
 
     private static final String TABLE_NAME = "device_logs";
+    //private static final String TABLE_NAME = "device_logs_new";
     private static final String COLUMN_ID = "_id";
     private static final String COLUMN_DEVICE_LOG = "device_log";
 
@@ -63,6 +66,7 @@ class DeviceLogTable {
 
         try {
             db.execSQL(DATABASE_CREATE);
+            Log.i(TAG,"ONCREATE DATABASE");
         } catch (Exception e) {
             e.printStackTrace();
             HyperLog.e(TAG, "DeviceLogTable: Exception occurred while onCreate: " + e);
@@ -77,7 +81,6 @@ class DeviceLogTable {
         try {
             db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
             onCreate(db);
-
             HyperLog.i(TAG, "DeviceLogTable onUpgrade called. Executing drop_table query to clear old logs.");
         } catch (Exception e) {
             e.printStackTrace();
@@ -235,7 +238,6 @@ class DeviceLogTable {
             Calendar calendar = Calendar.getInstance();
             //Set the calendar time to older time.
             calendar.add(Calendar.SECOND, -expiryTimeInSeconds);
-
             String date = HLDateTimeUtility.getFormattedTime(calendar.getTime());
 
             db.delete(TABLE_NAME, COLUMN_DEVICE_LOG + "<?", new String[]{date});

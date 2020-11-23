@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/hyperlog/com.hypertrack-hyperlog.iml" filepath="$PROJECT_DIR$/.idea/modules/hyperlog/com.hypertrack-hyperlog.iml" group="hyperlog-android/hyperlog" />
       <module fileurl="file://$PROJECT_DIR$/hyper-log-android.iml" filepath="$PROJECT_DIR$/hyper-log-android.iml" />
       <module fileurl="file://$PROJECT_DIR$/hyperlog/hyperlog.iml" filepath="$PROJECT_DIR$/hyperlog/hyperlog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/hyperlog-android.iml" filepath="$PROJECT_DIR$/.idea/modules/hyperlog-android.iml" group="hyperlog-android" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/hyperlog-demo/hyperlog-android-hyperlog-demo.iml" filepath="$PROJECT_DIR$/.idea/modules/hyperlog-demo/hyperlog-android-hyperlog-demo.iml" group="hyperlog-android/hyperlog-demo" />
       <module fileurl="file://$PROJECT_DIR$/hyperlog-demo/hyperlog-demo.iml" filepath="$PROJECT_DIR$/hyperlog-demo/hyperlog-demo.iml" />
     </modules>
   </component>

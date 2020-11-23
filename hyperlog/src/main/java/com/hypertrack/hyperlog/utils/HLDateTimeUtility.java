@@ -51,7 +51,8 @@ public class HLDateTimeUtility {
         try {
             // Quoted "Z" to indicate UTC, no timezone offset
             SimpleDateFormat dateFormat = new SimpleDateFormat(HT_DATETIME_FORMAT_1, Locale.US);
-            dateFormat.setTimeZone(TimeZone.getTimeZone(HT_TIMEZONE_UTC));
+            /*Quit timeZone default to get device hour*/
+            //dateFormat.setTimeZone(TimeZone.getTimeZone(HT_TIMEZONE_UTC));
             currentTime = dateFormat.format(new Date());
         } catch (Exception e) {
             HyperLog.e(TAG, "Exception while getCurrentTime: " + e);
@@ -67,7 +68,8 @@ public class HLDateTimeUtility {
         try {
             // Quoted "Z" to indicate UTC, no timezone offset
             SimpleDateFormat dateFormat = new SimpleDateFormat(HT_DATETIME_FORMAT_1, Locale.US);
-            dateFormat.setTimeZone(TimeZone.getTimeZone(HT_TIMEZONE_UTC));
+            /*Quit time zone to get device local time*/
+            //dateFormat.setTimeZone(TimeZone.getTimeZone(HT_TIMEZONE_UTC));
             return dateFormat.format(date);
         } catch (Exception e) {
             HyperLog.e(TAG, "Exception while getFormattedTime: " + e);
